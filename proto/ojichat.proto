@@ -1,0 +1,17 @@
+syntax = "proto3";
+package ojichat;
+option go_package = "./;ojichat";
+
+service Ojichat {
+  rpc Chat (stream ChatRequest) returns (stream ChatResponse) {}
+}
+
+
+message ChatRequest {
+  string name = 1;
+  string message = 2;
+}
+
+message ChatResponse {
+  string message = 1;
+}
